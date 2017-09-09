@@ -1,9 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 
 int main(){
+	//Test case with empty list
+	printf("Starting of Test Case 1\n");
+	printf("\n");
+	printf("\n");
+	list* A = create_list();
+	remove_from_list(A);
+	print_list(A);
+	flush_list(A);
+	free_list(A);
+	printf("\n");
+	printf("\n");
 
+	//Test case with list containing only one string
+	printf("Starting of Test Case 2\n");
+	printf("\n");
+	printf("\n");
+	list*B = create_list();
+	char* b = "B-List2";
+	add_to_list(B, b);
+	print_list(B);
+	remove_from_list(B);
+	print_list(B);
+	add_to_list(B, b);
+	print_list(B);
+	flush_list(B);
+	free_list(B);
+	printf("\n");
+	printf("\n");
+
+	//Test case with list containing 4 strings	
+	printf("Starting of Test Case 3\n");
+	printf("\n");
+	printf("\n");
 	list* curr = create_list();
 	char* one = "First";
 	char* two = "Second";
@@ -32,6 +65,59 @@ int main(){
 	printf("freeing\n");
 	free_list(curr);
 	print_list(curr);
+	printf("\n");
+	printf("\n");
+
+	//Test case with list containing 10 strings
+	printf("Starting of Test Case 4\n");
+	printf("\n");
+	printf("\n");
+	list* D = create_list();
+	char* q = "book";
+	char* w = "pen";
+	char* e = "eraser";
+	char* r = "laptop";
+	char* t = "headphone";
+	char* y = "bowl";
+	char* u = "table";
+	char* i = "chair";
+	char* o = "screen";
+	char* p = "keyboard";
+	add_to_list(D, q);
+	print_list(D);
+	add_to_list(D, w);
+	print_list(D);
+	add_to_list(D, e);
+	print_list(D);
+	add_to_list(D, r);
+	print_list(D);
+	add_to_list(D, t);
+	print_list(D);
+	add_to_list(D, y);
+	print_list(D);
+	add_to_list(D, u);
+	print_list(D);
+	add_to_list(D, i);
+	print_list(D);
+	add_to_list(D, o);
+	print_list(D);
+	add_to_list(D, p);
+	print_list(D);
+	remove_from_list(D);
+	print_list(D);
+	remove_from_list(D);
+	remove_from_list(D);
+	remove_from_list(D);
+	remove_from_list(D);
+	remove_from_list(D);
+	print_list(D);
+	flush_list(D);
+	print_list(D);
+	free_list(D);
+	printf("\n");
+	printf("\n");
+
+
 
 	return 0;
 }

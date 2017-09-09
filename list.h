@@ -2,16 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct node node;
 
+typedef struct node node;
+//struct definition for a node
+//contains a string and a pointer to the next node
 struct node
 {
 	char *string;
 	node* next;
-	//node* prev;
 };
 
 typedef struct list list;
+//struct definition for a linked list
+//containds pointers to the starting and ending nodes
 struct list
 {
 	node* start;
@@ -45,4 +48,4 @@ void flush_list(list* ll);
 /* De-allocates all data for the list. Ensure all memory
  * allocated for this list is freed, including any
  * allocated strings and the list itself. */
-void free_list(list *ll);
+void free_list(list* ll);
