@@ -132,6 +132,12 @@ int main(){
 	printf("\n");
 
 
+	printf("starting test case 5........\n");
+	list* five = create_list();
+	char* a = NULL;
+	add_to_list(five, a);
+	print_list(five);
+
 
 	return 0;
 }

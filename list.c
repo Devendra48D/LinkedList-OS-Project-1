@@ -29,6 +29,10 @@ and this node points next to the the previous starting node of the list
 
  * Returns 0 if addition to the list is successful, non-zero otherwise. */
 int add_to_list(list* ll, char* item){
+	if (item == NULL){
+		printf("The string you are trying to add is invalid. Try again.\n");
+		return -1;
+	}
 	node* toadd = (node*) malloc(sizeof(node));
 	toadd->string = strdup(item);
 	toadd->next = NULL;
