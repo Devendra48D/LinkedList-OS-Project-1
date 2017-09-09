@@ -45,7 +45,7 @@ int add_to_list(list* ll, char* item){
 char* remove_from_list(list* ll){
 	if ((ll->start != NULL) && (ll->end != NULL) && (ll->start == ll->end)){
 		node* curr = ll->start;
-		node* removed = curr->string;
+		char* removed = curr->string;
 		ll->start = NULL;
 		ll->end = NULL;
 		free(curr->string);
@@ -53,7 +53,7 @@ char* remove_from_list(list* ll){
 		return removed;
 	}
 	else if ((ll->start != NULL) && (ll->end != NULL) && (ll->start != ll->end)){
-		node* curr = ll->end;
+		/*node* curr = ll->end;
 		node* removed = curr->string;
 		free(curr->string);
 		free(curr);
@@ -65,6 +65,19 @@ char* remove_from_list(list* ll){
 		ll->end = head;
 		ll->end->string = head->string;
 		ll->end->next = NULL;
+		return removed;*/
+		node* toremove = ll->end;
+		char* removed = toremove->string;
+		node* head = ll->start;
+		while (head->next->next != NULL){
+			head = head->next;
+		}
+		head->next = NULL;
+		ll->end = head;
+		ll->end->string = head->string;
+		ll->end->next = NULL;
+		free(toremove->string);
+		free(toremove);
 		return removed;
 	}
 	else{
@@ -109,6 +122,7 @@ void flush_list(list* ll){
 		free(head);
 		ll->start = NULL;
 		ll->end = NULL;
+		ll = create_list();
 	}
 	else{
 		printf("The list is either empty/invalid or an error has occured.\n");

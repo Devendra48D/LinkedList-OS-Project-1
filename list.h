@@ -34,7 +34,7 @@ char* remove_from_list(list* ll);
 
 /* Prints every string in the list, with a new line
  * character at the end of each string */
-void print_list(list *ll);
+void print_list(list* ll);
 
 /* Flushes (clears) the entire list and re-initializes the
  * list. The passed pointer ll should still point to a
