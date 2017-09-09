@@ -82,6 +82,7 @@ char* remove_from_list(list* ll){
 	}
 	else{
 		printf("The list is invalid.Try again! \n");
+		return NULL;
 	}
 }
 
