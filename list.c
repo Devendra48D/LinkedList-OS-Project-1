@@ -53,19 +53,6 @@ char* remove_from_list(list* ll){
 		return removed;
 	}
 	else if ((ll->start != NULL) && (ll->end != NULL) && (ll->start != ll->end)){
-		/*node* curr = ll->end;
-		node* removed = curr->string;
-		free(curr->string);
-		free(curr);
-		node* head = ll;
-		while (head->next->next != NULL){
-			head = head->next;
-		}
-		head->next = NULL;
-		ll->end = head;
-		ll->end->string = head->string;
-		ll->end->next = NULL;
-		return removed;*/
 		node* toremove = ll->end;
 		char* removed = toremove->string;
 		node* head = ll->start;
