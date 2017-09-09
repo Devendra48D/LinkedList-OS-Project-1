@@ -78,10 +78,12 @@ char* remove_from_list(list* ll){
 void print_list(list *ll){
 	node* curr = ll->start;
 	if (ll->start != NULL){
+		//traverse till the second last string in the list
 		while (curr->next != NULL){
 			printf("%s\n", curr->string);
 			curr = curr -> next;
 		}
+		//print the last string in the list
 		printf("%s\n", ll->end->string);
 	}
 	else{
